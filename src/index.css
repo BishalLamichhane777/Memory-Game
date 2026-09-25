@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#root {
+  width: 100%;
+  max-width: 500px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.game-header h1 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.stats {
+  display: flex;
+  gap: 30px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.reset-btn {
+  background: #4a90d9;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background: #3a7bc0;
+}
+
+.win-message {
+  background: #d4edda;
+  padding: 20px 40px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #c3e6cb;
+}
+
+.win-message h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.win-message p {
+  color: #555;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.card {
+  aspect-ratio: 1;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  backface-visibility: hidden;
+  transition: opacity 0.2s;
+}
+
+.card-front {
+  background: #4a90d9;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.card-back {
+  background: white;
+  font-size: 2.2rem;
+  z-index: 0;
+}
+
+.card.flipped .card-front {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card.flipped .card-back {
+  opacity: 1;
+}
+
+.card.matched {
+  pointer-events: none;
+}
+
+.card.matched .card-back {
+  background: #d4edda;
+  border: 1px solid #28a745;
+}
+
+.card:hover:not(.matched):not(.flipped) .card-front {
+  background: #3a7bc0;
+}
+
+@media (max-width: 480px) {
+  .game-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .card-front,
+  .card-back {
+    font-size: 1.5rem;
+  }
+
+  .card-back {
+    font-size: 1.8rem;
+  }
+}
