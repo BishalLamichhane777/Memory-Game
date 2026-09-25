@@ -1,16 +1,56 @@
-# React + Vite
+# 🎮 Memory Card Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple memory matching game built with React and Vite. Flip cards to find matching emoji pairs, track your score and moves, and try to clear the board in as few moves as possible.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 4x4 grid of shuffled emoji cards
+- Score and move tracking
+- Win message when all pairs are matched
+- New Game button to reshuffle and restart
+- Responsive layout for mobile
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Plain CSS (no framework)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) installed on your machine
+
+### Installation
+
+1. Clone the repository
+
+```bash
+   git clone https://github.com/BishalLamichhane777/Memory-Game.git
+   cd Memory-Game
+```
+
+2. Install dependencies
+
+```bash
+   npm install
+```
+
+3. Run the development server
+
+```bash
+   npm run dev
+```
+
+4. Open the local URL shown in your terminal (usually `http://localhost:5173`)
+
+## How to Play
+
+- Click a card to flip it and reveal the emoji underneath
+- Flip a second card to try to find its match
+- If the two cards match, they stay revealed
+- If they don't match, they flip back after a short delay
+- Match all pairs to win the game
+
+## Project Structure
